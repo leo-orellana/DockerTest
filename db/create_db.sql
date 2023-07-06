@@ -1,3 +1,5 @@
+CREATE DATABASE DockerTest;
+
 CREATE TABLE
   Personas (
     id int IDENTITY(1, 1) NOT NULL,

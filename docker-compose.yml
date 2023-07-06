@@ -1,0 +1,22 @@
+version: "3.4"
+
+services:
+    db:
+        image: "mcr.microsoft.com/mssql/server:2022-latest"
+        ports:
+          - "1433:1433"
+        environment:
+            MSSQL_SA_PASSWORD: "g4Z+y@ST2w_e"
+            ACCEPT_EULA: "Y"
+    api:
+        image: "docker-back"
+        ports:
+          - "8080:80"
+        depends_on:
+          - db
+    app:
+        image: "docker-front"
+        ports:
+          - "80:80"
+        depends_on:
+          - api

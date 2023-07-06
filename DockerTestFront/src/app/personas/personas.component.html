@@ -1,0 +1,14 @@
+<div class="container">
+    <h4>Personas</h4>
+    <div *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="apiError">
+        <span class="api-error-message">An error has occurred while communicating with the server.</span>
+    </div>
+    <div *ngIf="isVisible">
+        <li *ngFor="let persona of personas">
+            <span style="font-weight: bold;">{{persona.nombre}} {{persona.apellido}}</span>
+        </li>
+    </div>
+</div>
